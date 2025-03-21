@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Arman Mobile</title>
+    <style>
+    </style>
+</head>
+<body>
+<div class="Arman">
+    <h2> <i>Arman Mobile</i></h2></div>
+    <input type="text" id="cardSearch" placeholder="Search Accessories..." onkeyup="filterCards()">
+
+    <div class="card-container">
+        <div class="w3-card-4">
+            <img src="https://rukminim3.flixcart.com/image/850/1000/xif0q/headphone/1/6/v/m8-earphone-kdm-original-imagpy52wzabgwes.jpeg?q=90&crop=false" alt="Alps">
+            <div class="w3-container w3-center">
+                <p>Kdm M8 Earphone</p><p><b>₹200</b></p>
+            </div>
+        </div>
+
+        <div class="w3-card-4">
+            <img src="https://rukminim1.flixcart.com/image/300/300/xif0q/shopsy-headphone/n/l/o/bluetooth-yes-kdm-double-dose-bluetooth-neckband-siu-original-imagvtkhgmvbghks.jpeg" alt="Beach">
+            <div class="w3-container w3-center">
+                <p>KDM Neckband</p><p>₹700</p>
+            </div>
+        </div>
+
+        <div class="w3-card-4">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/2/RN/ZJ/KG/46570006/kdm-66-skylight-wireless-speaker.jpg" alt="Forest">
+            <div class="w3-container w3-center">
+                <p>KDM Speaker</p><p>₹449</p>
+            </div>
+        </div>
+
+        <div class="w3-card-4">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2023/4/300283466/OJ/JV/ZE/157680083/whatsapp-image-2023-04-13-at-7-37-33-pm.jpg" alt="City">
+            <div class="w3-container w3-center">
+                <p>KDM Charging Cable</p><p>₹100</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer"><h2>Contact us</h2><p>Email@gmail.com</p></div>
+
+<!-- This is a search bar js -->
+    <script>
+        function filterCards() {
+            let input = document.getElementById("cardSearch").value.toLowerCase();
+            let cards = document.querySelectorAll(".w3-card-4");
+
+            cards.forEach(card => {
+                let text = card.innerText.toLowerCase();
+                card.style.display = text.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
+
+</body>
+</html>
