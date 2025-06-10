@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Arman Mobile Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Product Search</title>
+  <style>
+  
+    /* Basic styles */
+.menu-bar {
+  width: 30px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.bar {
+  height: 4px;
+  width: 100%;
+  background-color: #333;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Hide menu by default */
+.menu {
+  display: none;
+  background: #f4f4f4;
+  padding: 20px;
+}
+
+/* Show menu when active */
+.menu.active {
+  display: block;
+}
+
+    :root {
+      --primary: #232f3e;
+      --accent: #febd69;
+      --text-light: #ffffff;
+      --bg-light: #f3f3f3;
+      --text-dark: #111;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-light);
+      color: var(--text-dark);
+    }
+
+    /* Top Navbar */
+    .navbar {
+      background-color: var(--primary);
+      color: var(--text-light);
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .navbar h1 {
+      font-size: 1.5rem;
+    }
+
+    .search-bar {
+      flex: 1;
+      margin: 0 1rem;
+      display: flex;
+    }
+
+    .search-bar input {
+      flex: 1;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px 0 0 4px;
+    }
+
+    .search-bar button {
+      padding: 0.5rem 1rem;
+      border: none;
+      background-color: var(--accent);
+      color: var(--text-dark);
+      font-weight: bold;
+      border-radius: 0 4px 4px 0;
+      cursor: pointer;
+    }
+
+    .icons {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .icons span {
+      cursor: pointer;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: 200px;
+      background-color: #fff;
+      padding: 1rem;
+      position: fixed;
+      top: 70px;
+      bottom: 0;
+      overflow-y: auto;
+      border-right: 1px solid #ddd;
+
+    }
+
+    .sidebar h3 {
+      margin-bottom: 1rem;
+    }
+
+    .sidebar a {
+      display: block;
+      text-decoration: none;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    /* Main content */
+    .main-content {
+      margin-left: 220px;
+      padding: 2rem;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 2rem;
+    }
+
+    .product-card {
+      background-color: #fff;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .product-card img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    .product-card h4 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .product-card p {
+      color: green;
+      font-weight: bold;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+
+      .search-bar {
+        flex-basis: 100%;
+        margin: 1rem 0;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    
+  </style>
+</head>
+
+<body>
+
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1>Arman Mobile</h1>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search here...">
+      <button>Search</button>
+    </div>
+    <div class="icons">
+      <span>📦 Orders</span>
+      <span>🛒 Cart</span>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+<!-- Hamburger Icon -->
+<div class="menu-bar" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<!-- Side Menu or Dropdown Menu -->
+<nav id="menu" class="menu">
+  <ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Shop</a></li>
+    <li><a href="#">Location</a></li>
+    <li><a href="Testfile(Contact).html">Contact</a></li>
+  </ul>
+</nav>
+
+
+
+
+  <!-- Cards Container -->
+  <div id="productContainer">
+    <div class="product-card">
+      <img src="https://www.themobileindian.com/wp-content/uploads/2024/08/Lava-Yuva-Star-specs-120x120.jpg" alt="Product 4">
+      <h4>Smartwatch X</h4>
+      <p>$149.99</p>
+    </div>
+
+    <div class="product-card">
+      <img src="https://m.media-amazon.com/images/I/61tEiURZg6L._AC_UF1000,1000_QL80_.jpg" alt="Product 5">
+      <h4>Laptop Pro 16</h4>
+      <p>$1299.99</p>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200x180?text=Headphones" alt="Product 6">
+      <h4>Noise Cancelling Headphones</h4>
+      <p>$249.99</p>
+    </div>
+
+    <div class="product-card">
+      <img src="https://via.placeholder.com/200x180?text=Tablet" alt="Product 7">
+      <h4>Galaxy Tab A8</h4>
+      <p>$329.99</p>
+    </div>
+  </div>
+
+  <!-- No Results Message -->
+  <div class="no-results" id="noResults">No products found!</div>
+
+  <!-- JavaScript -->
+  <script>
+    const searchInput = document.getElementById('searchInput');
+    const productCards = document.querySelectorAll('.product-card');
+    const noResults = document.getElementById('noResults');
+
+    searchInput.addEventListener('keyup', function() {
+      const filter = searchInput.value.toLowerCase();
+      let visibleCount = 0;
+
+      productCards.forEach(card => {
+        const title = card.querySelector('h4').textContent.toLowerCase();
+        const price = card.querySelector('p').textContent.toLowerCase();
+
+        if (title.includes(filter) || price.includes(filter)) {
+          card.style.display = "flex"; // Show the card
+          visibleCount++;
+        } else {
+          card.style.display = "none"; // Hide the card
+        }
+      });
+
+      if (visibleCount === 0) {
+        noResults.style.display = "block"; // Show "No results"
+      } else {
+        noResults.style.display = "none"; // Hide "No results"
+      }
+    });
+    //Side menu bar
+    function toggleMenu() {
+  const menu = document.getElementById('menu');
+  menu.classList.toggle('active')};
+  
+    //end of menu bar 
+  </script>
+
+</body>
+</html>
