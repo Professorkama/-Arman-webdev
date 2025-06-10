@@ -1,62 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>Arman Mobile</title>
-    <style>
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile Page</title>
+  <style>
+    body {
+
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom right, #9fdfe7, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .profile-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 300px;
+    }
+
+    .profile-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #4CAF50;
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    .title {
+      font-size: 1rem;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .btn {
+      padding: 0.6rem 1rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .btn-contact {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .btn-contact:hover {
+      background-color: #45a049;
+    }
+    .btn-email {
+  background-color: #2196F3;
+  color: white;
+}
+
+.btn-email:hover {
+  background-color: #1976D2;
+}
+
+
+  </style>
 </head>
 <body>
-<div class="Arman">
-    <h2> <i>Arman Mobile</i></h2></div>
-    <input type="text" id="cardSearch" placeholder="Search Accessories..." onkeyup="filterCards()">
 
-    <div class="card-container">
-        <div class="w3-card-4">
-            <img src="https://rukminim3.flixcart.com/image/850/1000/xif0q/headphone/1/6/v/m8-earphone-kdm-original-imagpy52wzabgwes.jpeg?q=90&crop=false" alt="Alps">
-            <div class="w3-container w3-center">
-                <p>Kdm M8 Earphone</p><p><b>₹200</b></p>
-            </div>
-        </div>
-
-        <div class="w3-card-4">
-            <img src="https://rukminim1.flixcart.com/image/300/300/xif0q/shopsy-headphone/n/l/o/bluetooth-yes-kdm-double-dose-bluetooth-neckband-siu-original-imagvtkhgmvbghks.jpeg" alt="Beach">
-            <div class="w3-container w3-center">
-                <p>KDM Neckband</p><p>₹700</p>
-            </div>
-        </div>
-
-        <div class="w3-card-4">
-            <img src="https://5.imimg.com/data5/SELLER/Default/2023/2/RN/ZJ/KG/46570006/kdm-66-skylight-wireless-speaker.jpg" alt="Forest">
-            <div class="w3-container w3-center">
-                <p>KDM Speaker</p><p>₹449</p>
-            </div>
-        </div>
-
-        <div class="w3-card-4">
-            <img src="https://5.imimg.com/data5/SELLER/Default/2023/4/300283466/OJ/JV/ZE/157680083/whatsapp-image-2023-04-13-at-7-37-33-pm.jpg" alt="City">
-            <div class="w3-container w3-center">
-                <p>KDM Charging Cable</p><p>₹100</p>
-            </div>
-        </div>
+  <div class="profile-card">
+    <img src="Logo.png" alt="Profile Photo" class="profile-photo" />
+    <div class="name">Arman Mobile</div>
+    <div class="title">Main bus stand Sultanpur</div>
+    <div class="bio">
+      Accessories,Smart Phone,Keypad Phone,Repairing etc ...
     </div>
-
-    <div class="footer"><h2>Contact us</h2><p>Email@gmail.com</p></div>
-
-<!-- This is a search bar js -->
-    <script>
-        function filterCards() {
-            let input = document.getElementById("cardSearch").value.toLowerCase();
-            let cards = document.querySelectorAll(".w3-card-4");
-
-            cards.forEach(card => {
-                let text = card.innerText.toLowerCase();
-                card.style.display = text.includes(input) ? "block" : "none";
-            });
-        }
-    </script>
+    <div class="buttons">
+      <a href="tel:+918000797584" class="btn btn-contact">Contact</a>
+      <a href="GradeA.html" class="btn btn-email">View Items</a>
+    </div>
+  </div>
 
 </body>
 </html>
